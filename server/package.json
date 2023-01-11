@@ -1,0 +1,12 @@
+{
+  "name": "delivery-server",
+  "version": "1.0.0",
+  "description": "Delivery App Backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Vasilis Charlaftis",
+  "license": "ISC"
+}
