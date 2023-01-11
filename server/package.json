@@ -2,10 +2,19 @@
   "name": "delivery-server",
   "version": "1.0.0",
   "description": "Delivery App Backend",
-  "main": "index.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --collectCoverageFrom='src/**/*.js' --collectCoverageFrom='!src/migrations/*-*.js'",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "migration:create": "migrate-mongo create",
+    "migration": "migrate-mongo up",
+    "migration:revert": "migrate-mongo down",
+    "migration:status": "migrate-mongo status"
   },
   "author": "Vasilis Charlaftis",
   "license": "ISC",
