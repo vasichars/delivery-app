@@ -4,5 +4,12 @@
     "level": "debug",
     "morgan": true,
     "silent": false
+  },
+  "db": {
+    "host": "localhost",
+    "port": 27017,
+    "name": "delivery",
+    "user": "root",
+    "pass": "pass"
   }
 }

@@ -2,10 +2,12 @@ import express from 'express';
 import 'express-async-errors';
 import helmet from 'helmet';
 import morgan from './middleware/morgan.js';
+import dbConnect from './startup/db.js';
 import router from './startup/router.js';
 import error from './middleware/error.js';
 
 const app = express();
+await dbConnect();
 
 app.use(helmet());
 app.use(morgan);
