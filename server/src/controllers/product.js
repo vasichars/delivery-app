@@ -1,14 +1,17 @@
 import Product from '../models/product.js';
 import { convertProductsCurrency } from '../services/fixer.js';
 
-export const getProducts = async (req, res) => {
-  const currency = req.query.currency;
+class ProductController {
 
-  let products = await Product.find();
-
-  if (currency && currency.toLowerCase() !== 'eur') {
-    products = await convertProductsCurrency(products, currency);
+  async getProducts(req, res) {
+    const currency = req.query.currency;
+    let products = await Product.find();
+    if (currency && currency !== 'EUR') {
+      products = await convertProductsCurrency(products, currency);
+    }
+    res.json({ data: products });
   }
 
-  res.json({ data: products });
-};
+}
+
+export default new ProductController();

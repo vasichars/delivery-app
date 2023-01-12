@@ -16,7 +16,7 @@ export const convertCurrency = async (amount, to, from) => {
   return data;
 };
 
-export const convertProductsCurrency = async (products, to, from = 'eur') => {
+export const convertProductsCurrency = async (products, to, from = 'EUR') => {
 
   for (const product of products) {
 
