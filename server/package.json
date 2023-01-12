@@ -26,6 +26,7 @@
     "migrate-mongo": "^9.0.0",
     "mongoose": "^6.8.3",
     "morgan": "^1.10.0",
+    "node-fetch": "^3.3.0",
     "winston": "^3.8.2"
   },
   "devDependencies": {

@@ -11,5 +11,8 @@
     "name": "delivery",
     "user": "root",
     "pass": "pass"
+  },
+  "fixer": {
+    "apikey": "CCnIcZ4m1XRCgVIdAnjV5RscharaGuuM"
   }
 }

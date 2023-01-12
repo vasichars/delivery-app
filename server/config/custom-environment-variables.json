@@ -6,5 +6,8 @@
     "name": "DB_NAME",
     "user": "DB_USER",
     "pass": "DB_PASS"
+  },
+  "fixer": {
+    "apikey": "FIXER_API_KEY"
   }
 }
