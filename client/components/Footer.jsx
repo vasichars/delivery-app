@@ -1,7 +1,9 @@
-export const Footer = () => {
+const Footer = () => {
   return (
     <>
       Footer
     </>
   )
 }
+
+export default Footer;
