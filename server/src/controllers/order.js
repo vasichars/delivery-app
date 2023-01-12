@@ -1,5 +1,7 @@
-import Order from '../models/order.js';
+
 import _ from 'lodash';
+import Order from '../models/order.js';
+import ApiError from '../errors/ApiError.js';
 
 class OrderController {
 
@@ -17,7 +19,8 @@ class OrderController {
   }
 
   async updateOrder(req, res) {
-    const order = await Order.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    const order = await Order.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!order) ApiError.badRequest('Invalid data.');
     res.json({ data: order });
   }
 
