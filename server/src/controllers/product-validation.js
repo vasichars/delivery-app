@@ -6,7 +6,7 @@ export const getProducts = new ValidationObject({
     properties: {
       currency: {
         type: 'string',
-        enum: ['EUR', 'USD', 'CAD', 'CHF', 'CNY', 'CZK', 'GBP', 'HKD', 'JPY', 'RUB']
+        enum: ['', 'EUR', 'USD', 'CAD', 'CHF', 'CNY', 'CZK', 'GBP', 'HKD', 'JPY', 'RUB']
       }
     }
   }

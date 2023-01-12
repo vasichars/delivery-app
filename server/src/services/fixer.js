@@ -1,9 +1,10 @@
 import fetch from 'node-fetch';
 import config from 'config';
+import ApiError from '../errors/ApiError.js';
 
-export const convertCurrency = async (amount, to, from) => {
+export const getRates = async (to, from) => {
 
-  const url = `https://api.apilayer.com/fixer/convert?to=${to}&from=${from}&amount=${amount}`;
+  const url = `https://api.apilayer.com/fixer/latest?symbols=${to}&base=${from}`;
   const requestOptions = {
     method: 'GET',
     redirect: 'follow',
@@ -13,18 +14,17 @@ export const convertCurrency = async (amount, to, from) => {
   const response = await fetch(url, requestOptions);
   const data = await response.json();
 
-  return data;
+  if (!data.success) ApiError.badRequest('Fail to get current rates.');
+
+  return data.rates;
 };
 
 export const convertProductsCurrency = async (products, to, from = 'EUR') => {
 
+  const rates = await getRates(to, from);
+
   for (const product of products) {
-
-    const convertion = await convertCurrency(product.price, to, from);
-    if (convertion.success) {
-      product.price = convertion.result;
-    }
-
+    product.price = Math.round(product.price * rates[to] * 100) / 100;
   }
 
   return products;
