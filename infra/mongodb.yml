@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mongo:4.2.23
+    container_name: 'delivery-mongo'
+    environment:
+      MONGO_INITDB_DATABASE: delivery
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./mongo-local/delivery-db:/data/db
+    ports:
+      - 27017:27017
