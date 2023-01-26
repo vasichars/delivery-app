@@ -27,7 +27,7 @@ const Cart = () => {
                 <span className={styles.price}>13 &euro;</span>
               </td>
               <td>
-                <span className={styles.couantity}>2</span>
+                <span className={styles.quantity}>2</span>
               </td>
               <td>
                 <span className={styles.total}>26 &euro;</span>

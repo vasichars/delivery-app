@@ -44,3 +44,25 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+@media screen and (max-width:600px) {
+  .container {
+    height: auto;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .imgContainer {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .title {
+    margin: 5px;
+  }
+
+  .quantity, .button {
+    height: 50px;
+  }
+}
